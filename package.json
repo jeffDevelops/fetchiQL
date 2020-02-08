@@ -1,0 +1,24 @@
+{
+  "name": "fetchiql",
+  "version": "1.0.0",
+  "description": "Lightweight library for dispatching GraphQL queries and mutations with fetch",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "",
+    "build": "tsc"
+  },
+  "keywords": [
+    "graphql",
+    "fetch",
+    "http",
+    "post",
+    "mutation",
+    "query",
+    "GraphQL"
+  ],
+  "author": "Jeff Reynolds",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
