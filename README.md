@@ -1,6 +1,6 @@
 # FetchiQL
 
-A simple Fetch wrapper for making GraphQL queries/mutations. Great for vanilla JavaScript or Svelte projects.
+A simple Fetch POST wrapper for making GraphQL queries/mutations. Great for vanilla JavaScript or Svelte projects.
 
 ## Installation
 ```
