@@ -1,13 +1,13 @@
-## FetchiQL
+# FetchiQL
 
 A simple Fetch wrapper for making GraphQL queries/mutations. Great for vanilla JavaScript or Svelte projects.
 
-### Installation
+## Installation
 ```
 npm i fetchiql
 ```
 
-### Usage
+## Usage
 **Available imports**
 ```
 import fetchiql, { abortController, FetchiQLOptions } from 'fetchiql'
@@ -54,7 +54,7 @@ fetchiql('/graphql', query, variables, {
 
 ```
 
-#### Options
+## Options
 ```
 interface FetchiQLOptions {
   mode?: "cors" | "no-cors" | "same-origin";
@@ -77,7 +77,7 @@ interface FetchiQLOptions {
 }
 ```
 
-#### Abort the request
+## Abort the request
 
 The instance of the AbortController class passed as the fetch `signal` is exported as `abortController`. Call its `abort` method where needed to cancel the request.
 
@@ -119,7 +119,7 @@ useEffect(() => {
   })
 
   // ...
-  
+
 </script>
 ```
 
