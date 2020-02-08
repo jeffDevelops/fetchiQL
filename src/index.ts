@@ -33,8 +33,8 @@ export interface FetchiQLOptions {
  * @param {object} [variables={}] JavaScript object
  *
  * @returns {Promise} Resolves the data object (every response payload
- * within which will be accessible via the query/mutation name), or rejects a
- * newline-separated rollup string of all query/mutation errors that occurred
+ * within which will be accessible via the query/mutation name), or rejects an
+ * array of error messages
  */
 export default async (
   resource: string | Request,
@@ -57,13 +57,11 @@ export default async (
         if (res.ok) return resolve((await res.json()).data);
         throw new Error(JSON.stringify((await res.json()).errors));
       })
-      .catch(errors => {
-        const errorObj = JSON.parse(errors.message);
-        return reject(
-          errorObj.reduce((acc: string, current: Error) => {
-            acc = `${acc}\n${current.message}`;
-            return acc;
-          }, "")
-        );
-      });
+      .catch(errors =>
+        reject(
+          JSON.parse(errors.message).map(
+            (error: { message: string }) => error.message
+          )
+        )
+      );
   });
