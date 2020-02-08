@@ -77,3 +77,49 @@ interface FetchiQLOptions {
 }
 ```
 
+#### Abort the request
+
+The instance of the AbortController class passed as the fetch `signal` is exported as `abortController`. Call its `abort` method where needed to cancel the request.
+
+**React**
+```
+import fetchiql, { abortController } from 'fetchiql'
+
+// ...
+
+useEffect(() => {
+  fetchiql('/graphql', query, variables, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then(data => console.log(data.pets))
+  .catch((errors: string[]) => console.log(errors))
+
+  return () => abortController.abort()
+}, [])
+```
+
+**Svelte**
+```
+<script>
+  import fetchiql, { abortController } from 'fetchiql'
+
+  let data
+  onMount(() => {
+    fetchiql('/graphql', query, variables, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(data => console.log(data.pets))
+    .catch((errors: string[]) => console.log(errors))
+
+    return () => abortController.abort()
+  })
+
+  // ...
+  
+</script>
+```
+
