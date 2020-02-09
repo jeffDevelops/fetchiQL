@@ -1,9 +1,11 @@
 {
   "name": "fetchiql",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight library for dispatching GraphQL queries and mutations with fetch",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "tsc",
     "test": "",
     "build": "tsc"
   },
@@ -20,5 +22,13 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^3.7.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffDevelops/fetchiQL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffDevelops/fetchiQL/issues"
+  },
+  "homepage": "https://github.com/jeffDevelops/fetchiQL#readme"
 }
