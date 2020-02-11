@@ -1,5 +1,6 @@
-# FetchiQL
+<a href="https://fetchiql.tech"><img src="./FetchiQLLogo.png" alt="drawing" width="150"/></a>
 
+# FetchiQL
 A simple front end framework agnostic Fetch wrapper for GraphQL
 
 ### The problem
